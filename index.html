@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,12 +22,90 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
             color: #333;
-            background: #fff;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           MAIN TWO-COLUMN LAYOUT
+        ========================= */
+
+        .layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+
+        /* =========================
+           LEFT COVER PANEL
+        ========================= */
+
+        .side-panel {
+            width: 35%;
+            min-height: 100vh;
+
+            position: sticky;
+            top: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.20),
+                    rgba(0, 0, 0, 0.20)
+                ),
+                url("Cover03_cymk.png");
+
+            background-size: cover;
+            background-position: center;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================
+           RIGHT CONTENT
+        ========================= */
+
+        .content {
+            width: 65%;
+            max-width: 1000px;
+            padding: 50px 60px;
+        }
+
+
+        /* =========================
+           HEADER / PERSONAL PHOTO
+        ========================= */
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .profile-photo {
+            width: 160px;
+            height: 160px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            margin: 0 auto 20px auto;
+        }
+
+        header h1 {
+            margin: 0 0 5px 0;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        header p {
+            margin: 3px 0;
         }
 
 
@@ -38,20 +115,25 @@
 
         nav {
             text-align: center;
-            margin: 0;
-            padding: 20px;
-            background: white;
-            border-bottom: 1px solid #ddd;
 
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            padding: 15px 0;
+
+            margin-bottom: 45px;
+
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
         }
 
         nav a {
-            margin: 0 10px;
+            display: inline-block;
+
+            margin: 0 8px;
+
             text-decoration: none;
+
             color: #2563eb;
+
+            font-size: 15px;
         }
 
         nav a:hover {
@@ -60,90 +142,67 @@
 
 
         /* =========================
-           COVER
+           SECTIONS
         ========================= */
 
-        .cover {
-            width: 100%;
-            height: 420px;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.28),
-                    rgba(0, 0, 0, 0.28)
-                ),
-                url("Cover03_cymk.png");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
+        section {
+            margin-bottom: 50px;
         }
 
-        .cover-content {
-            color: white;
-            padding: 30px;
+        h2 {
+            font-size: 25px;
 
-            text-shadow:
-                0 2px 5px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #ddd;
+
+            padding-bottom: 8px;
+
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
-        .cover-content h1 {
-            font-size: 48px;
-            font-weight: 500;
-            margin: 0 0 12px 0;
-            letter-spacing: 0.5px;
-        }
-
-        .cover-content .position {
-            font-size: 22px;
-            margin: 0 0 8px 0;
-        }
-
-        .cover-content .department {
-            font-size: 17px;
-            margin: 0;
+        p {
+            margin-top: 0;
+            margin-bottom: 18px;
         }
 
 
         /* =========================
-           MAIN CONTENT
+           LISTS
         ========================= */
-
-        main {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        section {
-            scroll-margin-top: 90px;
-        }
-
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-            margin-top: 40px;
-        }
-
-        .publication {
-            margin-bottom: 25px;
-        }
-
-        .project {
-            margin-bottom: 15px;
-        }
 
         ul {
             padding-left: 25px;
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 6px;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           PUBLICATIONS
+        ========================= */
+
+        .publication {
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           LINKS
+        ========================= */
+
+        a {
+            color: #2563eb;
         }
 
 
@@ -152,49 +211,78 @@
         ========================= */
 
         footer {
-            max-width: 900px;
-            margin: 60px auto 0 auto;
-            padding: 20px;
+            margin-top: 70px;
+
+            padding-top: 20px;
+
             border-top: 1px solid #ddd;
+
             text-align: center;
+
             color: #777;
+
+            font-size: 14px;
         }
 
 
         /* =========================
-           MOBILE
+           MOBILE / TABLET
         ========================= */
 
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
 
-            nav {
-                padding: 15px 5px;
+            .layout {
+                display: block;
+            }
+
+            .side-panel {
+                width: 100%;
+                height: 300px;
+                min-height: 300px;
+
+                position: relative;
+            }
+
+            .content {
+                width: 100%;
+                padding: 35px 25px;
             }
 
             nav a {
-                margin: 0 5px;
-                font-size: 14px;
+                margin: 4px 6px;
             }
 
-            .cover {
-                height: 320px;
+        }
+
+
+        /* =========================
+           SMALL MOBILE
+        ========================= */
+
+        @media (max-width: 500px) {
+
+            .side-panel {
+                height: 240px;
+                min-height: 240px;
             }
 
-            .cover-content h1 {
-                font-size: 34px;
-            }
-
-            .cover-content .position {
-                font-size: 18px;
-            }
-
-            .cover-content .department {
-                font-size: 15px;
-            }
-
-            main {
+            .content {
                 padding: 30px 20px;
             }
+
+            .profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+
+            header h1 {
+                font-size: 27px;
+            }
+
+            nav {
+                line-height: 2;
+            }
+
         }
 
     </style>
@@ -205,55 +293,84 @@
 <body>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
-
-    <nav>
-
-        <a href="#about">About</a>
-        <a href="#research">Research</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#working-papers">Working Papers</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
-
-    </nav>
+<div class="layout">
 
 
-    <!-- =========================
-         COVER
-    ========================= -->
+    <!-- =========================================
+         LEFT COVER IMAGE
+    ========================================== -->
 
-    <section class="cover">
+    <aside class="side-panel">
+    </aside>
 
-        <div class="cover-content">
+
+
+    <!-- =========================================
+         RIGHT WEBSITE CONTENT
+    ========================================== -->
+
+    <main class="content">
+
+
+        <!-- =====================================
+             PERSONAL HEADER
+        ====================================== -->
+
+        <header>
+
+            <img
+                src="Samaneh.jpg"
+                alt="Dr. Samaneh Khaef"
+                class="profile-photo"
+            >
 
             <h1>Dr. Samaneh Khaef</h1>
 
-            <p class="position">
+            <p>
                 Postdoctoral Researcher in Human Geography
             </p>
 
-            <p class="department">
+            <p>
                 Department of Human Geography · Stockholm University
             </p>
 
-        </div>
+            <p>
+                Stockholm, Sweden
+            </p>
 
-    </section>
-
-
-    <!-- =========================
-         CONTENT
-    ========================= -->
-
-    <main>
+        </header>
 
 
-        <!-- ABOUT -->
+
+        <!-- =====================================
+             NAVIGATION
+        ====================================== -->
+
+        <nav>
+
+            <a href="#about">About</a>
+
+            <a href="#research">Research</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#publications">Publications</a>
+
+            <a href="#working-papers">Working Papers</a>
+
+            <a href="#teaching">Teaching</a>
+
+            <a href="#cv">CV</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+
+
+        <!-- =====================================
+             ABOUT
+        ====================================== -->
 
         <section id="about">
 
@@ -284,60 +401,122 @@
             <p><strong>Undergraduate:</strong></p>
 
             <ul>
+
                 <li>GIS and Spatial Analysis I</li>
+
                 <li>Essay on Swedish Geography</li>
+
                 <li>Swedish Geography</li>
+
                 <li>Geographical Methods I</li>
-                <li>Geographical Information Systems and Cartography</li>
+
+                <li>
+                    Geographical Information Systems and Cartography
+                </li>
+
                 <li>Geography II</li>
-                <li>Intelligence Analysis for Policy and Business (Human Geography)</li>
-                <li>Geographical Information Analysis II</li>
-                <li>Place, Identity and Migration</li>
+
+                <li>
+                    Intelligence Analysis for Policy and Business
+                    (Human Geography)
+                </li>
+
+                <li>
+                    Geographical Information Analysis II
+                </li>
+
+                <li>
+                    Place, Identity and Migration
+                </li>
+
             </ul>
 
 
             <p><strong>Postgraduate:</strong></p>
 
             <ul>
-                <li>Migration and Social Change – A Life Course Perspective</li>
-                <li>Advanced Method in Human Geography and Urban and Regional Planning</li>
+
+                <li>
+                    Migration and Social Change – A Life Course Perspective
+                </li>
+
+                <li>
+                    Advanced Method in Human Geography and Urban and
+                    Regional Planning
+                </li>
+
             </ul>
 
         </section>
 
 
-        <!-- RESEARCH -->
+
+        <!-- =====================================
+             RESEARCH
+        ====================================== -->
 
         <section id="research">
 
             <h2>Research</h2>
 
-            <p>My research interests include:</p>
+            <p>
+                My research interests include:
+            </p>
 
             <ul>
+
                 <li>Migration and integration</li>
-                <li>Education and labour-market integration</li>
-                <li>Residential choice and mobility</li>
-                <li>Housing, neighbourhoods and segregation</li>
-                <li>Spatial inequality and regional contexts</li>
-                <li>Integration across generations and across the urban–rural hierarchy</li>
-                <li>Kinship, social ties and residential pathways</li>
-                <li>School and preschool segregation and educational pathways</li>
+
+                <li>
+                    Education and labour-market integration
+                </li>
+
+                <li>
+                    Residential choice and mobility
+                </li>
+
+                <li>
+                    Housing, neighbourhoods and segregation
+                </li>
+
+                <li>
+                    Spatial inequality and regional contexts
+                </li>
+
+                <li>
+                    Integration across generations and across the
+                    urban–rural hierarchy
+                </li>
+
+                <li>
+                    Kinship, social ties and residential pathways
+                </li>
+
+                <li>
+                    School and preschool segregation and educational
+                    pathways
+                </li>
+
             </ul>
 
         </section>
 
 
-        <!-- PROJECTS -->
+
+        <!-- =====================================
+             PROJECTS
+        ====================================== -->
 
         <section id="projects">
 
             <h2>Current Research Projects</h2>
 
+
             <div class="project">
 
                 <strong>
-                    Embedded Lives: Contextual Effects on Life Course Trajectories
+                    Embedded Lives: Contextual Effects on Life Course
+                    Trajectories
                 </strong>
 
                 (2026–2029)
@@ -360,12 +539,12 @@
             <div class="project">
 
                 <strong>
-                    How Do Perceptions of the City Inform Neighbourhood Selection
-                    and Housing Search?
+                    How Do Perceptions of the City Inform Neighbourhood
+                    Selection and Housing Search?
                 </strong>
 
-                A comparison of second-generation migrants and natives in Uppsala
-                (2023–2026)
+                A comparison of second-generation migrants and natives
+                in Uppsala (2023–2026)
 
             </div>
 
@@ -384,17 +563,21 @@
         </section>
 
 
-        <!-- PUBLICATIONS -->
+
+        <!-- =====================================
+             PUBLICATIONS
+        ====================================== -->
 
         <section id="publications">
 
             <h2>Publications</h2>
 
+
             <div class="publication">
 
                 <strong>
-                    Enrollment and patterns of participation in Swedish for
-                    immigrants (SFI): timing, duration, and selection
+                    Enrollment and patterns of participation in Swedish
+                    for immigrants (SFI): timing, duration, and selection
                 </strong>
 
                 <br>
@@ -403,79 +586,114 @@
 
             </div>
 
-            <!-- KEEP THE REST OF YOUR PUBLICATIONS HERE -->
+
+            <!-- Add the rest of your publications here -->
+
 
         </section>
 
 
-        <!-- WORKING PAPERS -->
+
+        <!-- =====================================
+             WORKING PAPERS
+        ====================================== -->
 
         <section id="working-papers">
 
             <h2>Working Papers</h2>
 
-            <!-- KEEP YOUR WORKING PAPERS HERE -->
+
+            <!-- Add your working papers here -->
+
 
         </section>
 
 
-        <!-- TEACHING -->
+
+        <!-- =====================================
+             TEACHING
+        ====================================== -->
 
         <section id="teaching">
 
             <h2>Teaching</h2>
 
             <p>
-                Teaching experience includes Bachelor's and Master's courses in
-                human geography, GIS, spatial analysis, migration, and research
-                methods.
+                Teaching experience includes Bachelor's and Master's
+                courses in human geography, GIS, spatial analysis,
+                migration, and research methods.
             </p>
 
         </section>
 
 
-        <!-- CV -->
+
+        <!-- =====================================
+             CV
+        ====================================== -->
 
         <section id="cv">
 
             <h2>CV</h2>
 
             <p>
-                <a href="Samaneh_Khaef_CV.pdf" target="_blank">
+
+                <a
+                    href="Samaneh_Khaef_CV.pdf"
+                    target="_blank"
+                >
                     Download CV
                 </a>
+
             </p>
 
         </section>
 
 
-        <!-- CONTACT -->
+
+        <!-- =====================================
+             CONTACT
+        ====================================== -->
 
         <section id="contact">
 
             <h2>Contact</h2>
 
             <p>
+
                 Department of Human Geography<br>
+
                 Stockholm University<br>
+
                 Stockholm, Sweden
+
             </p>
+
 
             <p>
 
-                <a href="https://scholar.google.com/" target="_blank">
+                <a
+                    href="https://scholar.google.com/"
+                    target="_blank"
+                >
                     Google Scholar
                 </a>
 
-                |
+                &nbsp;|&nbsp;
 
-                <a href="https://orcid.org/" target="_blank">
+                <a
+                    href="https://orcid.org/"
+                    target="_blank"
+                >
                     ORCID
                 </a>
 
-                |
+                &nbsp;|&nbsp;
 
-                <a href="https://www.linkedin.com/" target="_blank">
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                >
                     LinkedIn
                 </a>
 
@@ -484,18 +702,23 @@
         </section>
 
 
+
+        <!-- =====================================
+             FOOTER
+        ====================================== -->
+
+        <footer>
+
+            © 2026 Dr. Samaneh Khaef · Stockholm University
+
+        </footer>
+
+
     </main>
 
-
-    <!-- FOOTER -->
-
-    <footer>
-
-        © 2026 Dr. Samaneh Khaef · Stockholm University
-
-    </footer>
+</div>
 
 
 </body>
+
 </html>
-```
