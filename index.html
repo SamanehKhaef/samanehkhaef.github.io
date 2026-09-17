@@ -1,291 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dr. Samaneh Khaef | Human Geography</title>
+<title>Dr. Samaneh Khaef</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #333;
-            background: #ffffff;
-            line-height: 1.7;
-        }
+body {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #333;
+    background: #ffffff;
+    line-height: 1.7;
+}
 
-        .layout {
-            display: flex;
-            min-height: 100vh;
-        }
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
 
-        /* LEFT COVER PANEL */
-        .side-panel {
-            width: 35%;
-            height: 100vh;
-            position: sticky;
-            top: 0;
-            background: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
+.side-panel {
+    width: 35%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 
-        .side-panel::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("Cover03_cymk.png");
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
+.side-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
-        /* MAIN CONTENT */
-        .content {
-            width: 65%;
-            max-width: 1000px;
-            padding: 50px 60px;
-        }
+.content {
+    width: 65%;
+    max-width: 1000px;
+    padding: 50px 60px;
+}
 
-        header {
-            margin-bottom: 35px;
-        }
+.profile {
+    text-align: center;
+    margin-bottom: 35px;
+}
 
-        .profile-photo {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin-bottom: 25px;
-        }
+.profile img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
 
-        h1 {
-            font-size: 38px;
-            margin: 0 0 8px 0;
-            color: #222;
-        }
+h1 {
+    font-size: 34px;
+    margin: 0 0 8px 0;
+    font-weight: normal;
+    color: #222;
+}
 
-        .position {
-            font-size: 20px;
-            margin-bottom: 5px;
-            color: #555;
-        }
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
 
-        .department {
-            font-size: 16px;
-            color: #666;
-        }
+.affiliation {
+    font-size: 16px;
+    color: #555;
+}
 
-        .location {
-            font-size: 16px;
-            color: #666;
-        }
+nav {
+    text-align: center;
+    margin: 30px 0 50px 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
 
-        nav {
-            margin: 30px 0 45px 0;
-            padding-bottom: 18px;
-            border-bottom: 1px solid #ddd;
-        }
+nav a {
+    margin: 0 8px;
+    color: #444;
+    text-decoration: none;
+    font-size: 15px;
+}
 
-        nav a {
-            color: #333;
-            text-decoration: none;
-            margin-right: 20px;
-            font-size: 15px;
-        }
+nav a:hover {
+    text-decoration: underline;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+section {
+    margin-bottom: 55px;
+}
 
-        section {
-            margin-bottom: 55px;
-            scroll-margin-top: 30px;
-        }
+h2 {
+    font-size: 25px;
+    font-weight: normal;
+    color: #222;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #ddd;
+}
 
-        h2 {
-            font-size: 27px;
-            color: #222;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-        }
+h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 25px;
+    margin-bottom: 12px;
+    color: #333;
+}
 
-        h3 {
-            font-size: 21px;
-            color: #333;
-            margin-top: 30px;
-            margin-bottom: 12px;
-        }
+p {
+    margin-bottom: 16px;
+}
 
-        p {
-            margin-bottom: 18px;
-        }
+ul {
+    padding-left: 22px;
+}
 
-        ul {
-            padding-left: 25px;
-        }
+li {
+    margin-bottom: 8px;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+a {
+    color: #555;
+}
 
-        .publication {
-            margin-bottom: 20px;
-        }
+.project-status {
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 12px;
+}
 
-        .publication a,
-        .contact-links a,
-        .cv-link {
-            color: #2b5d7c;
-            text-decoration: none;
-        }
+.project-title {
+    font-weight: normal;
+    margin-bottom: 14px;
+}
 
-        .publication a:hover,
-        .contact-links a:hover,
-        .cv-link:hover {
-            text-decoration: underline;
-        }
+.publication {
+    margin-bottom: 20px;
+}
 
-        .project {
-            margin-bottom: 22px;
-        }
+.working-paper {
+    margin-bottom: 18px;
+}
 
-        .project-title {
-            font-weight: normal;
-        }
+.policy-item {
+    margin-bottom: 20px;
+}
 
-        .project-status {
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 12px;
-        }
+.cv-box {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin-top: 20px;
+}
 
-        /* HOBBY / BEYOND ACADEMIA */
-        .hobby-image {
-            width: 100%;
-            max-width: 650px;
-            height: auto;
-            display: block;
-            margin-top: 25px;
-        }
+.cv-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 9px 18px;
+    border: 1px solid #555;
+    text-decoration: none;
+    color: #333;
+}
 
-        .hobby-caption {
-            margin-top: 10px;
-            color: #777;
-            font-size: 14px;
-            font-style: italic;
-        }
+.cv-link:hover {
+    background: #eee;
+}
 
-        .cv-box {
-            padding: 20px;
-            background: #f7f7f7;
-            border-left: 4px solid #555;
-        }
+/* ONLY CHANGE: Persian miniature A.jpg */
+.hobby-image {
+    width: 100%;
+    max-width: 430px;
+    height: auto;
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
 
-        .contact-links p {
-            margin-bottom: 10px;
-        }
+.hobby-caption {
+    margin-top: 10px;
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+}
 
-        footer {
-            margin-top: 70px;
-            padding-top: 25px;
-            border-top: 1px solid #ddd;
-            color: #777;
-            font-size: 14px;
-        }
+footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
 
-        @media (max-width: 800px) {
-            .layout {
-                display: block;
-            }
+@media (max-width: 800px) {
+    .layout {
+        display: block;
+    }
 
-            .side-panel {
-                width: 100%;
-                height: 300px;
-                position: relative;
-            }
+    .side-panel {
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
 
-            .content {
-                width: 100%;
-                max-width: none;
-                padding: 40px 30px;
-            }
-        }
+    .content {
+        width: 100%;
+        padding: 40px 30px;
+    }
+}
 
-        @media (max-width: 500px) {
-            .side-panel {
-                height: 240px;
-            }
+@media (max-width: 500px) {
+    .side-panel {
+        height: 240px;
+    }
 
-            .content {
-                padding: 30px 20px;
-            }
+    .content {
+        padding: 30px 20px;
+    }
 
-            h1 {
-                font-size: 30px;
-            }
+    h1 {
+        font-size: 28px;
+    }
 
-            .position {
-                font-size: 18px;
-            }
+    nav a {
+        display: inline-block;
+        margin: 5px 6px;
+    }
 
-            nav a {
-                display: inline-block;
-                margin-bottom: 8px;
-            }
-        }
-    </style>
+    .hobby-image {
+        max-width: 360px;
+    }
+}
+</style>
 </head>
 
 <body>
 
 <div class="layout">
 
-    <!-- LEFT COVER -->
-    <aside class="side-panel"></aside>
+    <div class="side-panel">
+        <img src="Cover03_cymk.png" alt="Cover image">
+    </div>
 
-    <!-- MAIN CONTENT -->
     <main class="content">
 
-        <header>
-
-            <img
-                src="Samaneh.jpg"
-                alt="Dr. Samaneh Khaef"
-                class="profile-photo"
-            >
-
+        <div class="profile">
+            <img src="Samaneh.jpg" alt="Dr. Samaneh Khaef">
             <h1>Dr. Samaneh Khaef</h1>
-
-            <div class="position">
-                Postdoctoral Researcher in Human Geography
-            </div>
-
-            <div class="department">
-                Department of Human Geography · Stockholm University
-            </div>
-
-            <div class="location">
+            <div class="subtitle">Postdoctoral Researcher in Human Geography</div>
+            <div class="affiliation">
+                Department of Human Geography · Stockholm University<br>
                 Stockholm, Sweden
             </div>
+        </div>
 
-        </header>
-
-
-        <!-- NAVIGATION -->
         <nav>
             <a href="#about">About</a>
             <a href="#research">Research</a>
@@ -294,43 +280,28 @@
             <a href="#working-papers">Working Papers</a>
             <a href="#policy">Policy Brief &amp; Discussion</a>
             <a href="#teaching">Teaching</a>
-            <a href="#hobby">Beyond Academia</a>
+            <a href="#beyond-academia">Beyond Academia</a>
             <a href="#cv">CV</a>
             <a href="#contact">Contact</a>
         </nav>
 
-
-        <!-- ABOUT -->
         <section id="about">
-
             <h2>About</h2>
 
             <p>
-                I am a Human geographer and Postdoctoral Researcher at the
-                Department of Human Geography, Stockholm University.
+                I am a Human geographer and Postdoctoral Researcher at the Department of Human Geography, Stockholm University.
             </p>
 
             <p>
-                My research focuses on migration and integration, education
-                and labour-market pathways, residential mobility, housing and
-                neighbourhoods, regional and geographical inequalities,
-                spatial and urban–rural contexts, and life-course trajectories
-                and integration outcomes.
+                My research focuses on migration and integration, education and labour-market pathways, residential mobility, housing and neighbourhoods, regional and geographical inequalities, spatial and urban–rural contexts, life-course trajectories and integration outcomes.
             </p>
 
             <p>
-                I also have extensive teaching experience across Bachelor's
-                and Master's courses in human geography, GIS, spatial
-                analysis, migration, research methods, as well as student
-                supervision.
+                I have extensive teaching experience across Bachelor's and Master's courses in human geography, GIS, spatial analysis, migration, research methods, as well as supervision.
             </p>
-
         </section>
 
-
-        <!-- RESEARCH -->
         <section id="research">
-
             <h2>Research Interests</h2>
 
             <ul>
@@ -343,197 +314,137 @@
                 <li>Kinship, social ties and residential pathways</li>
                 <li>School and preschool segregation and educational pathways</li>
             </ul>
-
         </section>
 
-
-        <!-- PROJECTS -->
         <section id="projects">
-
             <h2>Postdoctoral Research Projects</h2>
 
             <div class="project-status">Ongoing</div>
 
-            <div class="project">
-                <div class="project-title">
-                    Embedded Lives: Contextual Effects on Life Course Trajectories (2026–2029)
-                </div>
+            <div class="project-title">
+                Embedded Lives: Contextual Effects on Life Course Trajectories (2026–2029)
             </div>
 
-            <div class="project">
-                <div class="project-title">
-                    Language and Life-Course: An Exploration of the Swedish-for-Immigrants Program, 1990–2022 (2024–2027)
-                </div>
+            <div class="project-title">
+                Language and Life-Course: An Exploration of the Swedish-for-Immigrants Program, 1990–2022 (2024–2027)
             </div>
 
-            <div class="project">
-                <div class="project-title">
-                    How Do Perceptions of the City Inform Neighbourhood Selection and Housing Search? A comparison of second-generation migrants and natives in Uppsala (2023–2026)
-                </div>
+            <div class="project-title">
+                How Do Perceptions of the City Inform Neighbourhood Selection and Housing Search? A comparison of second-generation migrants and natives in Uppsala (2023–2026)
             </div>
 
             <div class="project-status">Completed</div>
 
-            <div class="project">
-                <div class="project-title">
-                    The Neighbourhood Revisited: Spatial Polarization and Social Cohesion in Contemporary Sweden (2019–2024)
-                </div>
+            <div class="project-title">
+                The Neighbourhood Revisited: Spatial Polarization and Social Cohesion in Contemporary Sweden (2019–2024)
             </div>
-
         </section>
 
-
-        <!-- PUBLICATIONS -->
         <section id="publications">
-
-            <h2>Peer-reviewed Publications &amp; Dissertation</h2>
+            <h2>Publications &amp; Dissertation</h2>
 
             <div class="publication">
-                Khaef, S. (2026). Enrollment and patterns of participation in Swedish for immigrants (SFI): timing, duration, and selectivity.
-                <em>Genus, 82</em>, 11.
-                <a href="https://doi.org/10.1186/s41118-026-00288-1"
-                   target="_blank"
-                   rel="noopener noreferrer">DOI</a>
+                Khaef, S. (2026). Enrollment and patterns of participation in Swedish for immigrants (SFI): timing, duration, and selectivity. <em>Genus</em>, 82, 11.
+                <a href="https://doi.org/10.1186/s41118-026-00288-1" target="_blank">DOI</a>
             </div>
 
             <div class="publication">
-                Khaef, S. (2025). Unravelling integration: Educational enrolment pathways of adult refugees in Sweden.
-                <em>Population, 80</em> (2).
-                <a href="https://doi.org/10.3917/popu.2502.0153"
-                   target="_blank"
-                   rel="noopener noreferrer">DOI</a>
+                Khaef, S. (2025). Unravelling integration: Educational enrolment pathways of adult refugees in Sweden. <em>Population</em>, 80 (2).
+                <a href="https://doi.org/10.3917/popu.2502.0153" target="_blank">DOI</a>
             </div>
 
             <div class="publication">
-                Khaef, S. (2024a). Migration Trajectories and Education: Measurement, Spatial Patterns, and Integration Pathways of Adult Migrants.
+                Khaef, S. (2024a). <em>Migration Trajectories and Education: Measurement, Spatial Patterns, and Integration Pathways of Adult Migrants.</em>
                 Stockholm University, Faculty of Social Sciences, Department of Human Geography.
-                ORCID ID:
-                <a href="https://orcid.org/my-orcid?orcid=0000-0002-2270-9729"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    0000-0002-2270-9729
-                </a>
+                ORCID: <a href="https://orcid.org/0000-0002-2270-9729" target="_blank">0000-0002-2270-9729</a>
             </div>
 
             <div class="publication">
                 Khaef, S., Haandrikman, K. (2024b). The Initial Residential Patterns of Immigrants Across the Urban Hierarchy in Sweden: The Role of Educational Attainment.
-                <em>Tijdschrift Voor Economische En Sociale Geografie</em>.
-                <a href="https://doi.org/10.1111/tesg.12608"
-                   target="_blank"
-                   rel="noopener noreferrer">DOI</a>
+                <em>Tijdschrift Voor Economische En Sociale Geografie.</em>
+                <a href="https://doi.org/10.1111/tesg.12608" target="_blank">DOI</a>
             </div>
 
             <div class="publication">
                 Khaef, S. (2022). Registration of Immigrants’ Educational Attainment in Sweden: An Analysis of Sources and Time to Registration.
-                <em>Genus, 78</em>, 16.
-                <a href="https://doi.org/10.1186/s41118-022-00159-5"
-                   target="_blank"
-                   rel="noopener noreferrer">DOI</a>
+                <em>Genus</em>, 78, 16.
+                <a href="https://doi.org/10.1186/s41118-022-00159-5" target="_blank">DOI</a>
             </div>
 
             <div class="publication">
                 Khaef, S., Zebardast, E. (2016). Assessing Quality of Life Dimensions in Deteriorated Inner Areas: A case from Javadieh Neighborhood in Tehran Metropolis.
-                <em>Social Indicators Research, 127</em>, 761–775.
-                <a href="https://doi.org/10.1007/s11205-015-0986-6"
-                   target="_blank"
-                   rel="noopener noreferrer">DOI</a>
+                <em>Social Indicators Research</em>, 127, 761–775.
+                <a href="https://doi.org/10.1007/s11205-015-0986-6" target="_blank">DOI</a>
             </div>
 
             <div class="publication">
-                Khaef, S. (2013). Perception of quality of life through a gendered lens: A case from the city of Birmingham.
+                Khaef, S. (2013). <em>Perception of quality of life through a gendered lens: A case from the city of Birmingham.</em>
                 University of Twente, Faculty of Geo-Information Science and Earth Observation.
             </div>
-
         </section>
 
-
-        <!-- WORKING PAPERS -->
         <section id="working-papers">
-
             <h2>Working &amp; Under-Revision Papers</h2>
 
-            <div class="publication">
-                Khaef, S. (2026a). Uneven returns to language training participation:
-                regional variation in migrants’ first employment entry in Sweden.
+            <div class="working-paper">
+                Khaef, S. (2026a). Uneven returns to language training participation: regional variation in migrants’ first employment entry in Sweden.
             </div>
 
-            <div class="publication">
-                Khaef, S., Malmberg, B. (2026b). Life-Course Trajectories and Tenure Type Contexts:
-                Spatial Assimilation among Migrants in Sweden.
+            <div class="working-paper">
+                Khaef, S., Malmberg, B. (2026b). Life-Course Trajectories and Tenure Type Contexts: Spatial Assimilation among Migrants in Sweden.
             </div>
 
-            <div class="publication">
-                Khaef, S. (2026c). Family ties and neighbourhood attainment:
-                kin proximity, kin’s neighbourhood poverty, and residential mobility in Sweden.
+            <div class="working-paper">
+                Khaef, S. (2026c). Family ties and neighbourhood attainment: kin proximity, kin’s neighbourhood poverty, and residential mobility in Sweden.
             </div>
 
-            <div class="publication">
-                Forsberg, S., Khaef, S. (2026d). Residential reasoning and stigmatisation:
-                How place labels and perceived unsafety shape housing search.
+            <div class="working-paper">
+                Forsberg, S., Khaef, S. (2026d). Residential reasoning and stigmatisation: How place labels and perceived unsafety shape housing search.
             </div>
 
-            <div class="publication">
-                Wimark, T., Khaef, S., Frisch, F. (2026e).
-                From Private to Corporate: Privatisation and financialisation in the Swedish housing market.
-                Under revision.
+            <div class="working-paper">
+                Wimark, T., Khaef, S., Frisch, F. (2026e). From Private to Corporate: Privatisation and financialisation in the Swedish housing market. <em>Under revision.</em>
             </div>
-
         </section>
 
-
-        <!-- POLICY -->
         <section id="policy">
-
             <h2>Policy Brief and Discussion</h2>
 
-            <div class="publication">
-                Khaef, S. (2026). “Uneven employment benefits of language training:
-                regional variation in migrants’ first employment entry in Sweden”.
-                <em>Population Europe</em>.
-                <a href="https://population-europe.eu/research/policy-insights/uneven-employment-benefits-language-training-regional-variation-migrants"
-                   target="_blank"
-                   rel="noopener noreferrer">Link</a>
+            <div class="policy-item">
+                Khaef, S. (2026). “Uneven employment benefits of language training: regional variation in migrants’ first employment entry in Sweden”.
+                <em>Population Europe.</em>
+                <a href="https://population-europe.eu/research/policy-insights/uneven-employment-benefits-language-training-regional-variation-migrants" target="_blank">Link</a>
             </div>
 
-            <div class="publication">
+            <div class="policy-item">
                 Khaef, S. (2025). “Sweden's migration rules 'not really in favor of those with high education'”.
                 Interviewed by <em>The Local Sweden</em> based on expertise on migration and higher education.
-                <a href="https://www.thelocal.se/20250806/every-time-i-meet-my-friends-theyre-talking-about-leaving-sweden"
-                   target="_blank"
-                   rel="noopener noreferrer">Link</a>
+                <a href="https://www.thelocal.se/20250806/every-time-i-meet-my-friends-theyre-talking-about-leaving-sweden" target="_blank">Link</a>
             </div>
 
-            <div class="publication">
+            <div class="policy-item">
                 Khaef, S. (2025). “Utbildningens betydelse för invandrares integrationsprocess”.
-                <em>Magasinet Konkret</em>.
-                <a href="https://magasinetkonkret.se/utbildning-och-integration-nu-ritas-kartan-om/"
-                   target="_blank"
-                   rel="noopener noreferrer">Link</a>
+                <em>Magasinet Konkret.</em>
+                <a href="https://magasinetkonkret.se/utbildning-och-integration-nu-ritas-kartan-om/" target="_blank">Link</a>
             </div>
 
-            <div class="publication">
-                Khaef, S., Migali, S. (2017).
-                The relationship between immigrants’ location in Italian cities and schools.
+            <div class="policy-item">
+                Khaef, S., Migali, S. (2017). The relationship between immigrants’ location in Italian cities and schools.
                 JRC, European Commission, internally published.
             </div>
 
-            <div class="publication">
-                Khaef, S. (2016).
-                Gendered Perspective in Planning and Development.
+            <div class="policy-item">
+                Khaef, S. (2016). Gendered Perspective in Planning and Development.
                 Ministry of Road and Urban Development, Women Portal.
             </div>
-
         </section>
 
-
-        <!-- TEACHING -->
         <section id="teaching">
-
             <h2>Teaching</h2>
 
             <h3>Undergraduate</h3>
 
-            <ul>
+            <ol>
                 <li>GIS and Spatial Analysis I</li>
                 <li>Essay on Swedish Geography</li>
                 <li>Swedish Geography</li>
@@ -543,88 +454,54 @@
                 <li>Intelligence Analysis for Policy and Business (Human Geography)</li>
                 <li>Geographical Information Analysis II</li>
                 <li>Place, Identity and Migration</li>
-            </ul>
-
+            </ol>
 
             <h3>Postgraduate</h3>
 
-            <ul>
+            <ol>
                 <li>Migration and Social Change – A Life Course Perspective</li>
                 <li>Advanced Method in Human Geography and Urban and Regional Planning</li>
-            </ul>
-
+            </ol>
         </section>
 
-
-        <!-- BEYOND ACADEMIA -->
-        <section id="hobby">
-
+        <section id="beyond-academia">
             <h2>Beyond Academia</h2>
 
             <p>
-                Being from Iran, I have always been inspired by art, poetry,
-                and the beauty of Persian miniature. After moving to Sweden,
-                I found that miniature painting became a way of carrying a
-                sense of home with me. It has given me a creative space to
-                reconnect with familiar colours, stories, and traditions
-                while creating something new.
+                Being from Iran, I have always been inspired by art, poetry, and the beauty of Persian miniature. After moving to Sweden, I found that miniature painting became a way of carrying a sense of home with me. It has given me a creative space to reconnect with familiar colours, stories, and traditions while creating something new.
             </p>
 
             <p>
-                Persian miniature is a traditional form of detailed painting,
-                characterised by intricate patterns, delicate figures, vivid
-                colours, and storytelling. I started learning and practising
-                it as a hobby, and it has gradually become a meaningful part
-                of my life beyond academia.
+                Persian miniature is a traditional form of detailed painting, characterised by intricate patterns, delicate figures, vivid colours, and storytelling. I started learning and practising it as a hobby, and it has gradually become a meaningful part of my life beyond academia.
             </p>
 
-            <p>
-                <strong>A work in progress</strong>
-            </p>
+            <p><strong>A work in progress</strong></p>
 
-            <img
-                src="A.jpg"
-                alt="Persian miniature painting by Dr. Samaneh Khaef"
-                class="hobby-image"
-            >
+            <img src="A.jpg" alt="Persian miniature painting by Dr. Samaneh Khaef" class="hobby-image">
 
             <div class="hobby-caption">
                 A work in progress.
             </div>
-
         </section>
 
-
-        <!-- CV -->
         <section id="cv">
-
             <h2>CV</h2>
 
             <div class="cv-box">
+                For my full academic background, publications, research experience, teaching experience and other activities, please see my CV.
 
-                <p>
-                    For my full academic background, publications, research
-                    experience, teaching experience and other activities,
-                    please see my CV.
-                </p>
+                <br>
 
-                <a
-                    href="https://samanehkhaef.github.io/Samaneh_Khaef_CV.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="cv-link"
-                >
+                <a href="https://samanehkhaef.github.io/Samaneh_Khaef_CV.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="cv-link">
                     Download CV
                 </a>
-
             </div>
-
         </section>
 
-
-        <!-- CONTACT -->
         <section id="contact">
-
             <h2>Contact</h2>
 
             <p>
@@ -633,53 +510,33 @@
                 Stockholm, Sweden
             </p>
 
-            <div class="contact-links">
+            <p>
+                Google Scholar:
+                <a href="https://scholar.google.com/citations?user=U4LZn_IAAAAJ&hl=sv" target="_blank">
+                    Google Scholar
+                </a>
+            </p>
 
-                <p>
-                    <strong>Google Scholar:</strong>
-                    <a
-                        href="https://scholar.google.com/citations?user=U4LZn_IAAAAJ&hl=sv"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Google Scholar
-                    </a>
-                </p>
+            <p>
+                ORCID:
+                <a href="https://orcid.org/my-orcid?orcid=0000-0002-2270-9729" target="_blank">
+                    0000-0002-2270-9729
+                </a>
+            </p>
 
-                <p>
-                    <strong>ORCID:</strong>
-                    <a
-                        href="https://orcid.org/my-orcid?orcid=0000-0002-2270-9729"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        0000-0002-2270-9729
-                    </a>
-                </p>
-
-                <p>
-                    <strong>LinkedIn:</strong>
-                    <a
-                        href="https://www.linkedin.com/in/samaneh-khaef-07831627/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn
-                    </a>
-                </p>
-
-            </div>
-
+            <p>
+                LinkedIn:
+                <a href="https://www.linkedin.com/in/samaneh-khaef-07831627/" target="_blank">
+                    LinkedIn
+                </a>
+            </p>
         </section>
 
-
-        <!-- FOOTER -->
         <footer>
             © 2026 Dr. Samaneh Khaef · Stockholm University
         </footer>
 
     </main>
-
 </div>
 
 </body>
