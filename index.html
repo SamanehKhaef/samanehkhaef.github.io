@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,42 +8,35 @@
     <title>Dr. Samaneh Khaef | Human Geographer</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 0;
             line-height: 1.6;
             color: #333;
+            background: #fff;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .profile-photo {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-
-        h1 {
-            margin-bottom: 5px;
-        }
-
-        h2 {
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 8px;
-            margin-top: 40px;
-        }
+        /* =========================
+           NAVIGATION
+        ========================= */
 
         nav {
             text-align: center;
-            margin-bottom: 40px;
+            margin: 0;
+            padding: 20px;
+            background: white;
+            border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
@@ -55,31 +49,10 @@
             text-decoration: underline;
         }
 
-        .publication {
-            margin-bottom: 25px;
-        }
+        /* =========================
+           COVER
+        ========================= */
 
-        .project {
-            margin-bottom: 15px;
-        }
-
-        ul {
-            padding-left: 25px;
-        }
-
-        li {
-            margin-bottom: 5px;
-        }
-
-        footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            text-align: center;
-            color: #777;
-        }
-    </style>
-</head>
         .cover {
             width: 100%;
             height: 420px;
@@ -104,6 +77,7 @@
         .cover-content {
             color: white;
             padding: 30px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .cover-content h1 {
@@ -123,17 +97,100 @@
             margin: 0;
         }
 
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        h2 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 40px;
+        }
+
+        .publication {
+            margin-bottom: 25px;
+        }
+
+        .project {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            max-width: 900px;
+            margin: 60px auto 0 auto;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            color: #777;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 14px;
+            }
+
+            .cover {
+                height: 320px;
+            }
+
+            .cover-content h1 {
+                font-size: 34px;
+            }
+
+            .cover-content .position {
+                font-size: 18px;
+            }
+
+            .cover-content .department {
+                font-size: 15px;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+
 <body>
 
-<header>
-    <img src="Samaneh.jpg" alt="Dr. Samaneh Khaef" class="profile-photo">
 
-    <h1>Dr. Samaneh Khaef</h1>
-    <p>Postdoctoral Researcher in Human Geography</p>
-    <p>Department of Human Geography · Stockholm University</p>
-    <p>Stockholm, Sweden</p>
-</header>
-
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
     <a href="#about">About</a>
@@ -147,7 +204,40 @@
 </nav>
 
 
+<!-- =========================
+     COVER IMAGE
+========================= -->
+
+<section class="cover">
+
+    <div class="cover-content">
+
+        <h1>Dr. Samaneh Khaef</h1>
+
+        <p class="position">
+            Postdoctoral Researcher in Human Geography
+        </p>
+
+        <p class="department">
+            Department of Human Geography · Stockholm University
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+
+<!-- ABOUT -->
+
 <section id="about">
+
     <h2>About</h2>
 
     <p>
@@ -190,10 +280,14 @@
         <li>Migration and Social Change – A Life Course Perspective</li>
         <li>Advanced Method in Human Geography and Urban and Regional Planning</li>
     </ul>
+
 </section>
 
 
+<!-- RESEARCH -->
+
 <section id="research">
+
     <h2>Research</h2>
 
     <p>My research interests include:</p>
@@ -208,10 +302,14 @@
         <li>Kinship, social ties and residential pathways</li>
         <li>School and preschool segregation and educational pathways</li>
     </ul>
+
 </section>
 
 
+<!-- PROJECTS -->
+
 <section id="projects">
+
     <h2>Current Research Projects</h2>
 
     <div class="project">
@@ -245,33 +343,49 @@
         </strong>
         (2019–2024)
     </div>
+
 </section>
 
 
+<!-- PUBLICATIONS -->
+
 <section id="publications">
+
     <h2>Publications</h2>
 
     <div class="publication">
+
         <strong>
             Enrollment and patterns of participation in Swedish for
             immigrants (SFI): timing, duration, and selection
         </strong>
+
         <br>
+
         Khaef, S.
+
     </div>
 
     <!-- KEEP THE REST OF YOUR PUBLICATIONS HERE -->
+
 </section>
 
 
+<!-- WORKING PAPERS -->
+
 <section id="working-papers">
+
     <h2>Working Papers</h2>
 
     <!-- KEEP YOUR WORKING PAPERS HERE -->
+
 </section>
 
 
+<!-- TEACHING -->
+
 <section id="teaching">
+
     <h2>Teaching</h2>
 
     <p>
@@ -279,10 +393,14 @@
         human geography, GIS, spatial analysis, migration, and research
         methods.
     </p>
+
 </section>
 
 
+<!-- CV -->
+
 <section id="cv">
+
     <h2>CV</h2>
 
     <p>
@@ -290,10 +408,14 @@
             Download CV
         </a>
     </p>
+
 </section>
 
 
+<!-- CONTACT -->
+
 <section id="contact">
+
     <h2>Contact</h2>
 
     <p>
@@ -315,12 +437,22 @@
             LinkedIn
         </a>
     </p>
+
 </section>
 
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
     © 2026 Dr. Samaneh Khaef · Stockholm University
 </footer>
 
+
 </body>
 </html>
+```
